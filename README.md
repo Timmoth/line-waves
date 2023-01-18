@@ -1,5 +1,9 @@
 # line-waves
-
+<p align="center">
+   <div style="width:640;height:320">
+       <img style="width: inherit" src="https://raw.githubusercontent.com/Timmoth/line-waves/main/image.png">
+</div>
+</p>
 [![Demo](https://img.shields.io/badge/live-demo-green?style=flat-square)](https://timmoth.com/line-waves/)
 
 Clone
