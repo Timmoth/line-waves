@@ -5,7 +5,7 @@ uniform vec2 u_size;
 uniform float u_lines;
 uniform float u_offset;
 
-float distance(vec2 uv, float time, float offset) {
+float dist(vec2 uv, float time, float offset) {
     vec2 off = vec2(0.0, 0.2);
     uv += off;
     time += offset;
@@ -18,7 +18,7 @@ void main(void) {
     float col = 0.0;
     float n = u_lines;
     for(float i = 0.0; i <= n; i++) {
-        float dis = distance(uv, u_time / 2.0, i / u_offset);
+        float dis = dist(uv, u_time / 2.0, i / u_offset);
         col += i / n * clamp(1.0 - dis * 70.0, 0.0, 1.0);
     }
 

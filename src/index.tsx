@@ -40,12 +40,19 @@ const ShaderPlane = () => {
 
   useFrame(({ camera, mouse }) => {
     uniforms.u_time.value += 0.01;
-    uniforms.u_lines.value = (mouse.x + 1) * 25 + 1;
-    uniforms.u_offset.value = (mouse.y + 1) * 25 + 1;
   });
 
   return (
-    <mesh ref={mesh} scale={[viewport.width, viewport.height, 1]}>
+    <mesh
+      ref={mesh}
+      scale={[viewport.width, viewport.height, 1]}
+      onPointerMove={(e) => {
+        let x = e.x / size.width;
+        let y = e.y / size.height;
+        uniforms.u_lines.value = (x + 1) * 25 + 1;
+        uniforms.u_offset.value = (y + 1) * 25 + 1;
+      }}
+    >
       <planeGeometry args={[1, 1]} />
       <shaderMaterial
         fragmentShader={fragmentShader}
