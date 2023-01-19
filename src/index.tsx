@@ -47,6 +47,7 @@ const ShaderPlane = () => {
       ref={mesh}
       scale={[viewport.width, viewport.height, 1]}
       onPointerMove={(e) => {
+        e.stopPropagation();
         let x = e.x / size.width;
         let y = e.y / size.height;
         uniforms.u_lines.value = (x + 1) * 25 + 1;
